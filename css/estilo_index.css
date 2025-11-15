@@ -1,84 +1,6 @@
-/*index.css - Estilos principais do site */
+/* index.css - Estilos principais do site */
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  background-color: #f8f9fa;
-  color: #222;
-  line-height: 1.6;
-}
-
-/*CABEÇALHO E NAVEGAÇÃO*/
-header {
-  background-color: #0044ff;
-  color: #fff;
-  padding: 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-}
-#logo {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 0.8rem;
-  text-align: center;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  text-align: center;
-}
-
-/* Efeito de destaque no menu */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: #ffd000;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* -------------------------------
-   SEÇÕES
---------------------------------*/
+/*  SEÇÕES */
 main {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -87,20 +9,24 @@ main {
 
 section {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-section h2 {
-  font-size: 3rem;
-  color: #000000;
+section h2,
+section h3 {
+  font-size: 2.5rem;
+  color: #000;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
+  font-weight: 600;
 }
 
-section h2::after {
+section h2::after,
+section h3::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 80px;
   height: 3px;
   background: #ffd000;
   margin: 0.5rem auto 0;
@@ -108,41 +34,36 @@ section h2::after {
 }
 
 section p {
-  color: #989db8;
+  color: #5a5f78;
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0.5rem auto 0;
-}
-
-/* -------------------------------
-   RODAPÉ
---------------------------------*/
-footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.95rem;
-}
-
-footer p {
-  letter-spacing: 0.5px;
+  line-height: 1.7;
 }
 
 /* -------------------------------
    RESPONSIVIDADE
 --------------------------------*/
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   header {
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
   }
 
   nav ul {
     justify-content: center;
   }
+}
 
-  section h2 {
-    font-size: 1.6rem;
+@media (max-width: 768px) {
+  section h2,
+  section h3 {
+    font-size: 2rem;
   }
 
   main {
@@ -157,6 +78,114 @@ footer p {
   }
 
   header h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
+
+  #logo {
+    width: 70px;
+  }
+
+  section h2,
+  section h3 {
+    font-size: 1.7rem;
+  }
+}
+/* Grade de produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.produtos section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.produtos section:hover {
+  transform: translateY(-6px);
+}
+
+.produtos img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Ofertas */
+.ofertas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.ofertas section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.ofertas section:hover {
+  transform: scale(1.05);
+}
+
+.ofertas .preco {
+  color: #0044ff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Contato */
+.contato-form {
+  max-width: 480px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.contato-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contato-form button {
+  background-color: #0044ff;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.contato-form button:hover {
+  background-color: #0036c7;
+}
+
+/* Mapa */
+.mapa iframe {
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+/* Página ativa */
+nav a.ativo {
+  color: #ffd000;
 }
