@@ -1,6 +1,18 @@
-/* -------------------------------
-   RESET E BASE
---------------------------------*/
+:root {
+  --cor-primaria: #0369a1;
+  --cor-secundaria: #ffd000;
+  --cor-texto-claro: #fff;
+  --cor-texto-escuro: #111;
+  --cor-texto-base: #222;
+  --background: #f8f9fa;
+
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  --font-base: "Poppins", "Segoe UI", sans-serif;
+
+  --transition: 0.3s ease-in-out;
+}
+
+/* =============================== RESET ================================*/
 * {
   margin: 0;
   padding: 0;
@@ -12,81 +24,80 @@ html {
 }
 
 body {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  background-color: #f8f9fa;
-  color: #222;
+  font-family: var(--font-base);
+  background-color: var(--background);
+  color: var(--cor-texto-base);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* -------------------------------
-   CABEÇALHO E NAVEGAÇÃO
---------------------------------*/
+/* =============================== CABEÇALHO ================================*/
 header {
-  background-color: #0044ff;
-  color: #fff;
-  padding: 1.5rem 2rem;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  padding: 1rem 4rem; 
   position: sticky;
-  top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  height: auto;
+  box-shadow: var(--shadow);
+}
+
+#logo_nome {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.line-break {
+  display: block;
+  margin-top: -8px;
+  line-height: 0.9;
 }
 
 #logo {
-  width: 90px;
+  width: 6rem;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
 }
 
 header h1 {
-  font-size: 2rem;
-  letter-spacing: 1px;
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  text-align: left;
-  font-weight: 600;
-}
-
-nav {
-  display: flex;
-  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  gap: 1.2rem;
 }
-
+/* =============================== NAVEGAÇÃO ================================*/
 nav a {
-  color: #fff;
+  font-size: 1.5rem;
+  color: var(--cor-texto-claro);
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  padding: 0.25rem 0;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
 nav a:hover {
-  color: #ffd000;
+  color: var(--cor-secundaria);
 }
 
-/* RODAPÉ*/
+/* =============================== RODAPÉ ================================*/
 footer {
-  background-color: #111;
-  color: #fff;
+  background-color: var(--cor-texto-escuro);
+  color: var(--cor-texto-claro);
   text-align: center;
   padding: 1.8rem 1rem;
   font-size: 0.95rem;
   margin-top: 2rem;
   width: 100%;
-  transition: all 0.3s ease;
+  transition: opacity var(--transition);
 }
 
 footer p {
