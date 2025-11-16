@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Adiciona o listener APÓS o DOM estar carregado
+  // Adiciona o listener de envio do formulário
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Impede o envio normal do formulário
-
+    event.preventDefault(); // Impede o envio do formulário vazio
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const msg = document.getElementById("msg").value;

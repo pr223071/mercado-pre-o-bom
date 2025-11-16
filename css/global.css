@@ -12,7 +12,6 @@
   --transition: 0.3s ease-in-out;
 }
 
-/* =============================== RESET ================================*/
 * {
   margin: 0;
   padding: 0;
@@ -31,11 +30,10 @@ body {
   overflow-x: hidden;
 }
 
-/* =============================== CABEÇALHO ================================*/
 header {
   background-color: var(--cor-primaria);
   color: var(--cor-texto-claro);
-  padding: 1rem 4rem; 
+  padding: 1rem 4rem;
   position: sticky;
   z-index: 1000;
   display: flex;
@@ -88,28 +86,98 @@ nav a:hover {
   color: var(--cor-secundaria);
 }
 
-/* =============================== RODAPÉ ================================*/
+/*footer*/
 footer {
-  background-color: var(--cor-texto-escuro);
-  color: var(--cor-texto-claro);
+  background-color: #1a1a2e;
+  color: white;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-conteudo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.contact-section,
+.items-section {
+  margin-bottom: 20px;
+}
+
+.contact-section h3,
+.items-section h3 {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-section ul,
+.items-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-section li,
+.useful-items- li {
+  margin-bottom: 8px;
+  color: white;
+}
+.items-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.items-section a:hover {
+  color: #4a90e2;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
   text-align: center;
-  padding: 1.8rem 1rem;
-  font-size: 0.95rem;
-  margin-top: 2rem;
-  width: 100%;
-  transition: opacity var(--transition);
 }
 
-footer p {
-  letter-spacing: 0.5px;
-  opacity: 0.9;
+.copyright {
+  margin: 0 0 10px 0;
+  font-weight: bold;
 }
 
+.aviso {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.8;
+}
 
-/* =============================== RESPONSIVIDADE ================================*/
+a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-section,
+  .items-section {
+    margin-bottom: 25px;
+  }
+}
+
+/*RESPONSIVIDADE*/
 
 @media (max-width: 1200px) {
-
   header h1 {
     font-size: 1.6rem;
   }
@@ -117,7 +185,6 @@ footer p {
   #logo {
     width: 4.5rem;
   }
-
 
   nav ul {
     gap: 1rem;
@@ -130,7 +197,6 @@ footer p {
 }
 
 @media (max-width: 990px) {
-
   header {
     flex-direction: column;
   }
@@ -143,7 +209,6 @@ footer p {
     width: 5rem;
   }
 
-
   nav ul {
     gap: 2.5rem;
     margin-top: 0.8rem;
@@ -155,7 +220,6 @@ footer p {
 }
 
 @media (max-width: 670px) {
-
   header h1 {
     font-size: 1.5rem;
   }

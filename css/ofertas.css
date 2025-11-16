@@ -1,6 +1,3 @@
-/* -------------------------------
-   RESET E BASE (Mantenha o seu código aqui)
---------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -25,12 +22,16 @@ p {
   font-weight: 500;
   color: grey;
 }
+.copyright {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: white;
+  font-weight: bold;
+}
 
-/* ===================================
-   GRID DE PRODUTOS E CARDS (Estrutura .ofertas)
-   =================================== */
-
-/* Container do Grid: .ofertas (Corresponde a <section class="ofertas">) */
+/* Container do Grid*/
 .ofertas {
   display: grid;
   /* Adapta-se a colunas de no mínimo 220px */
@@ -40,7 +41,7 @@ p {
   padding: 0 1rem;
 }
 
-/* Card Individual (Corresponde às <section> aninhadas) */
+/* Card Individual */
 .ofertas section {
   background: #fff;
   border-radius: 12px;
@@ -66,43 +67,4 @@ p {
   color: #000;
   margin-bottom: 0.5rem;
   font-weight: 600;
-}
-
-/* Estiliza o preço antigo (dentro do <p> com a tag <del>) */
-.ofertas section p del {
-  color: #777;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* Preço de Oferta (Corresponde a <p class="preco">) */
-.ofertas .preco {
-  color: #ff0000; /* Destaque principal em vermelho */
-  font-weight: 800;
-  font-size: 2rem;
-  padding-top: 10px;
-  border-top: 1px dashed #eee; /* Linha divisória */
-  margin-top: 10px;
-}
-
-/* ===================================
-   RESPONSIVIDADE
-   =================================== */
-
-@media (max-width: 768px) {
-  .ofertas {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ofertas {
-    /* Em mobile, apenas uma coluna */
-    grid-template-columns: 1fr;
-  }
-  .ofertas .preco {
-    font-size: 1.8rem;
-  }
 }

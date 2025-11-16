@@ -1,4 +1,4 @@
-// Aguarda o DOM (estrutura HTML) estar completamente carregado
+// Aguarda o carregamento do hmtl
 document.addEventListener("DOMContentLoaded", () => {
   // Seleciona o container principal
   const carrossel = document.querySelector("#carrossel");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // busca slide ativo
     const activeSlide = slidesList.querySelector(".imagem[data-active]");
 
-    // Pega a lista completa de slides (todas as LIs com classe 'imagem')
+    // Pega todas as imagens
     const slides = [...slidesList.querySelectorAll(".imagem")];
 
     let newIndex = slides.indexOf(activeSlide) + 1;
@@ -32,5 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[newIndex].dataset.active = true;
   }
 
-  setInterval(showNextSlide, 4000);
+  setInterval(showNextSlide, 5000);
 });
